@@ -13,6 +13,7 @@ I would love to hear from you, please let me know about tips, tricks and methodo
   - Read 
   - Update 
   - Delete
+  - Rich Text editor included 
 - Reset password 
 - Email verification
 - Invitation token
@@ -30,7 +31,19 @@ I would love to hear from you, please let me know about tips, tricks and methodo
   - Generate random set of characters 
   
 ### Bad Practices 
+- HTML code has been reused for navbar:
+  - There is a solution to create a block in jinja2 with ```{% block navbar %} <nav> {% endblock %}``` and then use that whenever you want a navbar but that solution just doesn't work here.
+- Too many CSS files
+  - There is just too many CSS files that makes the website's design very hard to maintain, currently only I know what's going on, unfortunetly this part of the project is not easy to be used by others.
+- The front-end was not designed for mobile users
+  - Although it works fine or seems to work fine on iPad and similar devices.
 
+### Vulnerabilities
+This application has not been tested and I have no interest in testing it but from what I can read in source code, these vulnerabilities are to be found:
+- Stored XSS in blog 
+- RCE in thumbnail file upload for blog 
+- Service side template injection
+- 
 
 
 
