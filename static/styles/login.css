@@ -2,8 +2,8 @@
 .container {
   margin-top: 10%;
   width: 30%;
-  min-width: max-content;
-  max-width: 50%;
+  min-width: 30%;
+  max-width: 30%;
   text-align: left;
   font-family: 'Chakra Petch';
   color: hsla(187, 100%, 37%, 1);

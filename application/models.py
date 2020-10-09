@@ -72,5 +72,3 @@ class Posts(db.Model):
         return f"{self.post_url}"
 
 
-
-

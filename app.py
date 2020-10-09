@@ -9,9 +9,7 @@ from configs import config
 from flask_wtf.csrf import CSRFProtect
 
 
-
 trv = flask.Flask(__name__)
-#mail = Mail(trv)
 
 trv.config["SECRET_KEY"] = '(Th"E{p)wwv-=!QE/{$d>S`|x!L)+Qj_QhK(#~atA^{u>ixI;>_eXkC(1@?D!D4Xw'
 trv.config["SECURITY_PASSWORD_SALT"] = ')+Qj_QhK(#~atA^{u>ixI;'
@@ -35,7 +33,6 @@ trv.config['MAIL_USERNAME'] = "no-reply@researchersvalley.org"
 trv.config['MAIL_PASSWORD'] = config.email_password
 mail = Mail(trv)
 
-
 trv.url_map.strict_slashes = False              # helps to defeat the problem of automatic redirects
 
 login = LoginManager(trv)
@@ -56,7 +53,6 @@ def before_request():
 
 
 from application import views, models
-
 
 if __name__ == '__main__':
     trv.run()

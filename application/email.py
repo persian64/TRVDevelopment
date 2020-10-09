@@ -6,7 +6,7 @@ def send_email(to, subject, template):
         subject=subject,
         recipients=[to],
         html=template,
-        sender='The Researchers Valley'
+        sender='no-reply@researchersvalley.org'
     )
     mail.send(msg)
 
