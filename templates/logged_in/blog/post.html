@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ post_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/logged_in/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/logged_in/settings.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/logged_in/post.css') }}">
+  </head>
+
+  <body>
+    <div class="sidebar-container">
+      <div class="sidebar-logo">
+        Welcome to the Valley
+      </div>
+    {% if current_user.is_authenticated %}
+    <ul class="sidebar-navigation">
+      <li class="header">Dashboard</li>
+      <li>
+        <a href="{{ url_for('home') }}">
+          <i class="fa fa-home" aria-hidden="true"></i> Home
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('gen_invite') }}">
+          <i class="fa fa-cube" aria-hidden="true"></i> Generate invite code
+        </a>
+      </li>
+
+      <li class="header">Blog</li>
+      <li>
+        <a href="{{ url_for('create_post') }}">
+          <i class="fa fa-book" aria-hidden="true"></i> Create a post
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('currUsrPosts') }}">
+          <i class="fa fa-hashtag" aria-hidden="true"></i> My Posts
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('members_posts') }}">
+          <i class="fa fa-feed" aria-hidden="true"></i> Other Posts
+        </a>
+      </li>
+
+      <li class="header">My Account</li>
+      <li>
+        <a href="{{ url_for('user_settings') }}">
+          <i class="fa fa-cog" aria-hidden="true"></i> Settings
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('logout') }}">
+          <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+        </a>
+      </li>
+    </ul>
+    {% endif %}
+
+    {% if not current_user.is_authenticated %}
+    <ul class="sidebar-navigation">
+      <li class="header">Menu</li>
+      <li><a href="{{ url_for('index') }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+      <li><a href="{{ url_for('blog') }}"><i class="fa fa-archive" aria-hidden="true"></i> Blog</a></li>
+      <li class="header">Posts by {{ post_author }}</li>
+        {% for each in list_author_posts %}
+      <li><a href="http://127.0.0.1:5000/blog/posts/{{ each }}"><i class="fa fa-home" aria-hidden="true"></i> {{ each.post_title }}</a></li>
+        {% endfor %}
+
+      <li class="header">Posts by other authors</li>
+        {% for each in list_others_posts %}
+      <li><a href="http://127.0.0.1:5000/blog/posts/{{ each }}"><i class="fa fa-home" aria-hidden="true"></i> {{ each.post_title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+    <div class="content-container">
+      <div class="jumbotron">
+        <h1 id="post_title">{{ show_title }}</h1>
+          <p id="post_date">Posted at: {{ post_creation_date }}</p>
+          <br>
+        <img src="data:image/png;base64,{{ show_image }}" alt="Post thumbnail" id="post_thumbnail" class="img-fluid">
+          <br>
+        <div class="post_text">
+          {{ show_post|safe }}
+        </div>
+      </div>
+      </div>
+  </body>
+</html>

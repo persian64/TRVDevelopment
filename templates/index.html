@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Researchers Valley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+  </head>
+  <body>
+
+    <nav class="navbar-expand-sm navbar-custom justify-content-center fixed-top">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_nav">
+            <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true" style="color: #ffffff"></i></span>
+          </button>
+
+      <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="collapse_nav">
+        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('blog') }}" class="nav-link"><i class="fa fa-book" aria-hidden="true"></i> Blog</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link"><i class="fa fa-comments" aria-hidden="true"></i> About</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id='nav_drops' role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-users" aria-hidden="true"></i> Member
+          </a>
+          <div class="dropdown-menu" aria-labelledby="nav_drops">
+            <a href="{{ url_for('login') }}" class="dropdown-item">Login</a>
+            <a href="{{ url_for('signup') }}" class="dropdown-item">Signup</a>
+          </div>
+        </li>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("ul li a").click(function () {
+                    $("li a").removeClass("active");
+                    $(this).addClass("activate");
+                });
+            });
+        </script>
+
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id='nav_drops' role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-secret" aria-hidden="true"></i> Hack us
+          </a>
+          <div class="dropdown-menu" aria-labelledby="nav_drops">
+            <a href="{{ url_for('bug_hunting') }}" class="dropdown-item">Security Disclosure</a>
+          </div>
+        </li>
+      </ul>
+        </div>
+    </nav>
+
+
+    <div class="wrapper">
+        <h1><strong>The Researchers Valley</strong></h1>
+        <span id="short_about"><strong>Connecting tech-minded people across the world</strong></span>
+      </div>
+
+      <!-- Container for about -->
+      <div class="container-md">
+          <span id="container_title"><strong>Who are we</strong></span>
+          <p id="about_text">We are a community of tech-minded people gathered around to make the world a better place, we want to achieve this goal in several ways.<br>
+          Our mission is to gather tech-minded people around the world, work with them, improve them and ourselves and create useful stuff for the world;
+          the first service that we created was this website, it was created so that tech-minded folk or researchers can gather around, share their knowledge
+          and build things that can have positive impact to at least one person's life.<br>
+        </p>
+        <a href="{{ url_for('about') }}" class="btn btn-custom">Read More</a>
+      </div>
+
+
+      <!-- Container for blog -->
+    <div class="container">
+        <span id="container_title"><strong>Our blog</strong></span>
+
+        <div class="row">
+            {% for each in latest_posts %}
+          <div class="col col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ each.post_title[:30] }}</h5>
+                <div class="card-text">
+                  <p id='article_about'>{{ each.post_about|safe }}...</p>
+                  <span id='article_author'>Written by {{ each.post_author }}
+                </div>
+                <a href="http://127.0.0.1:5000/blog/posts/{{ each.post_url }}" class="btn btn-custom">Read</a>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+
+
+        <a href="{{ url_for('blog') }}" class="btn btn-custom">Open Blog</a>
+    </div>
+
+    <footer class="page-footer font-small">
+      <div class="footer-copyright text-center py-3">
+        Made with &#10084; by Researchers for Researchers.
+      </div>
+    </footer>
+
+  </body>
+</html>

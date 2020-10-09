@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Member Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="{{ url_for('static', filename='styles/js/loggingMessage.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+
+  </head>
+  <body>
+
+    <nav class="navbar-expand-sm navbar-custom justify-content-center fixed-top">
+          <button class="navbar-toggler hidden-lg-up pull-right" type="button" data-toggle="collapse" data-target="#collapse_nav">
+            <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true" style="color: #ffffff"></i></span>
+          </button>
+
+      <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="collapse_nav">
+        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('blog') }}" class="nav-link"><i class="fa fa-book" aria-hidden="true"></i> Blog</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link"><i class="fa fa-comments" aria-hidden="true"></i> About</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id='nav_drops' role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-users" aria-hidden="true"></i> Member
+          </a>
+          <div class="dropdown-menu" aria-labelledby="nav_drops">
+            <a href="{{ url_for('login') }}" class="dropdown-item">Login</a>
+            <a href="{{ url_for('signup') }}" class="dropdown-item">Signup</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id='nav_drops' role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-secret" aria-hidden="true"></i> Hack us
+          </a>
+          <div class="dropdown-menu" aria-labelledby="nav_drops">
+            <a href="{{ url_for('bug_hunting') }}" class="dropdown-item">Security Disclosure</a>
+          </div>
+        </li>
+      </ul>
+        </div>
+    </nav>
+
+    <div class="container pt-3">
+        <h2>Member Login</h2>
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="errorBox">
+              <strong class="error_message">{{ message }}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" style="color: #d01d4c;">&times;</span>
+              </button>
+            </div>
+        {% endfor %}
+      <form method="post" action="{{ url_for('login') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="form-group">
+          <label for="member_username">Username</label>
+          <input type="text" class="form-control" id="member_email" placeholder="Enter your username" required name="member_username">
+        </div>
+        <div class="form-group">
+          <label for="member_password">Password</label>
+          <input type="password" class="form-control" id="member_password" name="member_password" placeholder="Enter Password" required>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
+          <label class="form-check-label" for="remember_me">Remember me for 1 week</label>
+        </div>
+        <small id="password_help" class="form-text text-muted">Forgot your password? <a href="{{ url_for('reset_password') }}" class="link">Reset Password</a>.</small>
+          <br>
+          <div class="g-recaptcha brochure__form__captcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+        <button type="submit" class="btn btn-custom" id="submit" name="submit_button">Log me in</button>
+      </form>
+    </div>
+
+  </body>
+</html>

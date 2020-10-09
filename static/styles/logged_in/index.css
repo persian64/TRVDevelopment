@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+body {
+  margin: 0;
+  background-color: hsla(212, 33%, 15%, 1);
+}
+
+a, .header {
+  font-family: 'Electrolize';
+}
+
+.sidebar-container {
+  position: fixed;
+  width: 260px;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: hsla(212, 33%, 18%, 1);
+  color: #fff;
+}
+
+.content-container {
+  padding: 6%;
+  margin-left: 10%;
+  padding-left: 220px;
+  padding-top: 6%;
+  padding-bottom: 4%;
+}
+
+.jumbotron {
+  background-color: hsla(212, 33%, 11.5%, 1);
+}
+
+.sidebar-logo {
+  padding: 10px 15px 10px 30px;
+  font-size: 18px;
+  background-color: hsla(212, 33%, 18%, 1);
+  font-family: 'Aldrich'
+}
+
+.sidebar-navigation {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.sidebar-navigation li {
+  background-color: transparent;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  line-height: 20px;
+}
+
+.sidebar-navigation li a {
+  padding: 10px 15px 10px 30px;
+  display: block;
+  color: hsla(0, 0%, 84%, 1);
+}
+
+.sidebar-navigation li .fa {
+  margin-right: 10px;
+}
+
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:hover,
+.sidebar-navigation li a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.sidebar-navigation li::before {
+  background-color: hsla(212, 33%, 13%, 1);
+  position: absolute;
+  content: '';
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+  width: 3px;
+  z-index: -1;
+}
+
+.sidebar-navigation li:hover::before {
+  width: 100%;
+}
+
+.sidebar-navigation .header {
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: hsla(212, 33%, 21%, 1);
+  padding: 10px 15px 10px 30px;
+}
+
+.sidebar-navigation .header::before {
+  background-color: transparent;
+}
+
+
+
+/* for blog container and boxes  */
+
+.container {
+  font-family: Oxanium;
+  margin:auto;
+  margin-top: 0%;
+  margin-bottom: 6%;
+  font-family: 'Chakra Petch';
+  padding: 16px;
+  background-color: hsla(212, 33%, 13%, 1);
+  color: #fff;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: hsla(212, 33%, 21%, 1);
+  border-width: thick;
+  text-align: center;
+}
+
+#published_by_others {
+  margin-top: 5%;
+}
+
+#container_title {
+  color: white;
+  font-size: 20pt;
+  font-family: 'Aldrich';
+  text-align: center;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+
+.col-md-4 {
+  margin-top: 20px;
+}
+
+.card-body {
+  text-align: left;
+  background-color: hsla(212, 33%, 11.5%, 1);
+}
+
+/* card border and style */
+.card {
+  border: none;
+}
+
+
+.col-md-4 {
+
+  min-width: 260px;
+}
+
+.btn-custom {
+  color: #fff;
+  background-color: hsla(337, 43%, 32%, 1);
+  margin-top: 16px;
+}
+
+.btn-custom:hover {
+  color: hsla(360, 0%, 75%, 1);
+  background-color: hsla(0, 0%, 10%, 1);
+}
+
+.btn-custom:active {
+  background-color: hsla(0, 0%, 5%, 1);
+}
+
+
+.card-text {
+  color: hsla(0, 0%, 77%, 1);
+}
+
+#about_text {
+  color: hsla(360, 0%, 75%, 1);
+  font-size: 16px;
+}
+
+.alert {
+  background-color: #282828;
+  border: none;
+}
+
+.error_message {
+  color: #d01d4c;
+}
+
+
+/* The following is design for pagination links */
+.page-link {
+  color: #e2e2e2;
+  background-color: hsla(206, 25%, 20%, 1);
+}
+
+.page-link a:hover {
+  background-color: red;
+}
+
+.pagination {
+  margin-top: 5%;
+}
+
+
+
+

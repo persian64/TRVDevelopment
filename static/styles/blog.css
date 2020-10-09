@@ -1,0 +1,19 @@
+
+.container {
+  margin-top: 10%;
+  font-family: 'Chakra Petch';
+  color: hsla(337, 43%, 50%, 1);
+}
+
+.page-link {
+  color: #e2e2e2;
+  background-color: hsla(206, 25%, 20%, 1);
+}
+
+.page-link a:hover {
+  background-color: red;
+}
+
+.pagination {
+  margin-top: 5%;
+}

@@ -1,0 +1,42 @@
+.container-md {
+  margin-top: 10%;
+  text-align: left;
+  margin-left: 30px;
+  min-width: 30%;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 36px;
+  margin-top: 10pt;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  font-family: Gugi;
+}
+
+h2 {
+  font-weight: bold;
+  color: hsla(189, 90%, 33%, 1);
+  font-size: 26px;
+  margin-bottom: 30px;
+  margin-top: 30pt;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  font-family: Gugi;
+}
+
+p, ul, li {
+  margin-left: 20px;
+  font-size: 16px;
+  color: white;
+  font-family: 'Chakra Petch';
+  font-display: swap;
+  font-weight: lighter;
+}
+
+hr {
+  margin-top: 26px;
+  border: 1px solid hsla(200, 48%, 13%, 1);
+  margin-bottom: 20px;
+}

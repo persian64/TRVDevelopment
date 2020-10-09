@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+body {
+  margin: 0;
+  background-color: hsla(200, 48%, 13%, 1);
+  background: url('/static/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.dropdown-menu {
+  background-color: hsla(206, 25%, 19%, 0.89);
+}
+
+.pull-right {
+  float: right !important;
+
+}
+.navbar-custom {
+  background-color: hsla(206, 25%, 20%, 1);
+  display: flex;
+  width: 40%;
+  min-width: max-content;
+  margin: auto;
+  margin-top: 20px;
+  border-top: 2px solid hsla(0, 0%, 17%, 1);
+  border-bottom: 2px solid hsla(0, 0%, 17%, 1);
+  border-style: solid;
+  border-radius: 20px;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+.navbar-nav {
+  min-width: max-content;
+}
+
+
+.navbar-custom a {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Quantico;
+
+}
+
+.navbar-custom a:hover {
+  color: hsla(192, 61%, 51%, 1);
+  background-color: hsla(0, 0%, 0%, 0.28);
+}
+.navbar-custom a:active {
+  background-color: hsla(0, 34%, 41%, 1);
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 36px;
+  margin-top: 100pt;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  font-family: Gugi;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+#container_title {
+  color: white;
+  font-size: 20pt;
+  font-family: 'Aldrich';
+  text-align: center;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+
+.container-md {
+  font-family: Oxanium;
+  margin:auto;
+  margin-top: 5%;
+  margin-bottom: 6%;
+  padding: 16px;
+  background-color: hsla(206, 25%, 19%, 0.89);
+  color: hsla(21, 100%, 50%, 1);
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: thick;
+  text-align: center;
+}
+
+.container {
+  font-family: Oxanium;
+  margin:auto;
+  margin-top: 5%;
+  margin-bottom: 6%;
+  padding: 16px;
+  background-color: hsla(206, 25%, 19%, 0.89);
+  color: hsla(130, 58%, 37%, 1);
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: thick;
+  text-align: center;
+}
+
+.col-md-4 {
+  margin-top: 20px;
+}
+
+.card-body {
+  text-align: left;
+  background-color: hsla(206, 25%, 20%, 1);
+}
+
+.col-md-4 {
+
+  min-width: 260px;
+}
+
+.btn-custom {
+  background-color: hsla(206, 30%, 51%, 0.78);
+  margin-top: 16px;
+}
+
+.btn-custom:hover {
+  color: hsla(360, 0%, 75%, 1);
+}
+
+.btn-custom:active {
+  background-color: hsla(0, 0%, 14%, 1);
+}
+
+
+.card-text {
+  color: white;
+}
+
+#about_text {
+  color: hsla(360, 0%, 75%, 1);
+  font-size: 16px;
+}
+
+p {
+  font-family: 'Chakra Petch';
+}
+
+a {
+  font-family: 'Electrolize';
+}
+
+.card-title {
+  font-family: Quantico;
+}
+
+#article_about, #article_author, #author_name {
+  font-size: 16px;
+  font-family: 'Chakra Petch';
+}
+
+#short_about {
+  font-size: 30px;
+  font-family: 'VT323';
+  color: white;
+}
+
+.page-footer {
+  background-color: hsla(206, 25%, 20%, 1);
+  color: white;
+  font-family: 'Electrolize';
+  margin-top: 20pt;
+  width: 100%;
+}
+
+.alert {
+  background-color: #282828;
+  border: none;
+}
+
+.error_message {
+  color: #d01d4c;
+}
+
+/* */

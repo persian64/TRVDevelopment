@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../static/styles/index.css">
+    <link rel="stylesheet" href="../../static/styles/about.css">
+  </head>
+  <body>
+
+    <nav class="navbar-expand-sm navbar-custom justify-content-center fixed-top">
+          <button class="navbar-toggler hidden-lg-up pull-right" type="button" data-toggle="collapse" data-target="#collapse_nav">
+            <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true" style="color: #ffffff"></i></span>
+          </button>
+
+      <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="collapse_nav">
+        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('blog') }}" class="nav-link"><i class="fa fa-book" aria-hidden="true"></i> Blog</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link"><i class="fa fa-comments" aria-hidden="true"></i> About</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id='nav_drops' role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-users" aria-hidden="true"></i> Member
+          </a>
+          <div class="dropdown-menu" aria-labelledby="nav_drops">
+            <a href="{{ url_for('login') }}" class="dropdown-item">Login</a>
+            <a href="{{ url_for('signup') }}" class="dropdown-item">Signup</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id='nav_drops' role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-secret" aria-hidden="true"></i> Hack us
+          </a>
+          <div class="dropdown-menu" aria-labelledby="nav_drops">
+            <a href="{{ url_for('bug_hunting') }}" class="dropdown-item">Security Disclosure</a>
+          </div>
+        </li>
+      </ul>
+        </div>
+    </nav>
+
+    <div class="container-md">
+      <h1><strong>The Researchers Valley</h1>
+      <p>We are a community of tech-minded people gathered around to make the world a better place, we want to achieve this goal in several ways.<br>
+        Our mission is to gather tech-minded people around the world, work with them, improve them and ourselves and create useful stuff for the world;
+        the first service that we created was this website, it was created so that tech-minded folk or researchers can gather around, share their knowledge
+        and build things that can have positive impact to at least one person's life.<br>
+      </p>
+
+      <hr>
+      <h2>What the community is really about?</h2>
+      <p>Here are a list of things that we are focused on:</p>
+        <ul>
+          <li>Creating something good for the world, people, your team or anyone, just something that helps people is OK</li>
+          <li>CTF & Hacking Competitions to upgrade everyone's skill-set</li>
+          <li>Programming Competitions</li>
+          <li>Creating a community of like-minded people</li>
+          <li>Contributing for the good of people and everyone around you</li>
+        </ul>
+      <hr>
+      <h2>How to join?</h2>
+      <p>As an individual if you are into one of the following, you can join us:
+        <ul>
+          <li>Playing on a CTF</li>
+          <li>Played on CTFs </li>
+          <li>Learning a programming language </li>
+          <li>Reading a book about subjects related to IT </li>
+          <li>Researching subjects related to IT </li>
+          <li>Creating or created something to help people (even if it's 20 lines of code)</li>
+          <li>Getting their feet wet in bug bounties </li>
+          <li>Pursuing a degree & interested in tech</li>
+          <li>Just interested in tech</li>
+        </ul>
+      </p>
+      <p>However, it is required to understand that our intentions and intentions of those joining us can match, these intentions are about helping and improving the world.<br>
+      Our community remains white-hat & neutral, we have nothing to do with attacking people or performing any type of malicious activity, when it comes down to politics, race,
+      culture and religion, our community remains neutral.<br><br>
+
+      <p>If you want to become a member you can join our Discord channel, there you can start a project or talk about the things that you want to share with a bigger audience and
+      we will give you the 'Invitation Code' which is required for signup, after that you can join as a <a href="{{ url_for('signup') }}" class="link">member</a>.</p>
+
+      <a href="https://discord.gg/Ya3uugj" class="btn btn-custom">Join us on Discord</a>
+      <hr>
+      <h2>Career</h2>
+      <p>This community was not only created for participating in projects or capture the flag competitions, we believe that this community can help individuals in one way or another;
+      but still choosing a career path or mastering one specific field can help you a lot professionally.<br>
+      Our community consist of people from different fields and skill-set, here we are going to list few career paths that you can choose to follow.</p>
+      <ul>
+        <li>Software Development
+          <ul>
+            <li>Mobile: iOS, Android </li>
+            <li>Desktop: Linux, OSX, Windows </li>
+          </ul>
+        </li>
+        <li>Web Development
+          <ul>
+            <li>Front-end </li>
+            <li>Back-end </li>
+            <li>Full Stack </li>
+          </ul>
+        </li>
+        <li>DevOps </li>
+        <li>Cryptography
+        <li>Forensics & Steganography </li>
+        <li>Forensics & Malware Hunting </li>
+        <li>OSINT</li>
+        <li>Hacking: Offensive & Defensive
+          <ul>
+            <li>Web Exploitation
+              <ul>
+                <li>Client side </li>
+                <li>Server side </li>
+              </ul>
+            </li>
+            <li>Mobile Software </li>
+            <li>Desktop Software </li>
+            <li>Networking  </li>
+          </ul>
+        </li>
+        <li>Reverse Engineering </li>
+        <li>Binary Exploitation  </li>
+        <li>Data Science </li>
+        <li>IoT</li>
+        <li>Artificial Intelligence </li>
+        <li>Machine Learning</li>
+        <li>Deep Learning </li>
+        <li>Robotics</li>
+      </ul>
+      <p>
+        You might ask questions about these paths in our Discord channel and someone might help you out.
+      </p>
+      <br><br>
+      <p>Peace.</p>
+    </div>
+
+  </body>
+</html>

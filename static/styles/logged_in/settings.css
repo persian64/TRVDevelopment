@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
+label, h4 {
+  color: hsla(0, 0%, 80%, 1);
+}
+
+.form-control, .content-container, .jumbotron {
+  min-width: 30%;
+  font-family: 'Quantico';
+}
+
+.form-control {
+  width: 60%;
+  min-width: 100%;
+}
+
+h4 {
+  padding-top: 2%;
+}
+
+.form-control {
+  color: red;
+}

@@ -1,0 +1,38 @@
+
+.container {
+  margin-top: 10%;
+  width: 30%;
+  min-width: max-content;
+  max-width: 50%;
+  text-align: left;
+  font-family: 'Chakra Petch';
+  color: hsla(187, 100%, 37%, 1);
+  text-align: left;
+}
+
+input {
+  color: #fff !important;
+}
+
+.form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom-style: solid;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
+h2 {
+  text-align: center;
+  color: hsla(360, 0%, 75%, 1);
+  font-family: Gugi;
+}
+
+
+.form-control:focus {
+  background-color: hsla(206, 25%, 19%, 0.89);
+  border-color: hsla(187, 100%, 37%, 1);
+
+}
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Generate invite code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/logged_in/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/logged_in/settings.css') }}">
+    <style media="screen">
+      h3, p, td {
+        color: #fff;
+      }
+      td {
+        color: hsla(0, 0%, 61%, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar-container">
+
+      <div class="sidebar-logo">
+        Welcome to the Valley
+      </div>
+    <ul class="sidebar-navigation">
+      <li class="header">Dashboard</li>
+      <li>
+        <a href="{{ url_for('home') }}">
+          <i class="fa fa-home" aria-hidden="true"></i> Home
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('gen_invite') }}">
+          <i class="fa fa-cube" aria-hidden="true"></i> Generate invite code
+        </a>
+      </li>
+
+      <li class="header">Blog</li>
+      <li>
+        <a href="{{ url_for('create_post') }}">
+          <i class="fa fa-book" aria-hidden="true"></i> Create a post
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('currUsrPosts') }}">
+          <i class="fa fa-hashtag" aria-hidden="true"></i> My Posts
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('members_posts') }}">
+          <i class="fa fa-feed" aria-hidden="true"></i> Other Posts
+        </a>
+      </li>
+
+      <li class="header">My Account</li>
+      <li>
+        <a href="{{ url_for('user_settings') }}">
+          <i class="fa fa-cog" aria-hidden="true"></i> Settings
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('logout') }}">
+          <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+    <div class="content-container">
+        <div class="jumbotron">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="errorBox">
+              <strong class="error_message">{{ message }}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" style="color: #d01d4c;">&times;</span>
+              </button>
+            </div>
+        {% endfor %}
+          <h3>What?</h3>
+          <p>You registered an account by submitting an invite code, in this interface you can create invite codes for others to join as members.
+          Please proceed with caution, we hope that your friends who are interested in what we do have the same intentions as you.<br>
+          You are responsible for the people you invite, and you get credited the same way.</p>
+          <p>How invite code works?</p>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Expires</td>
+                <td>After one use</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Your information</p>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>You were invited by</td>
+                <td><a href="#">@thomas</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Your invite codes</p>
+          <table class="table">
+            <tbody>
+            {% for each in all_codes %}
+            <tr>
+                <td>{{ each }}</td>
+                <td>{{ token_status }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+            <form action="{{ url_for('gen_invite') }}" method="post">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="form-group">
+                  <label for="member_confirmation">In order to generate an invite code, please enter your current password.
+                  <input type="password" class="form-control" required name="member_confirmation"></label>
+                </div>
+                <button type="submit" name="gen_button" class="btn btn-custom">Generate the code</button>
+            </form>
+        </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
