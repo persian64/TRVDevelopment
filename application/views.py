@@ -1,4 +1,4 @@
-from app import trv, db, csrf
+from app import trv, db
 import flask
 from application.models import Users, Invitations, Posts
 from flask_login import current_user, login_user, logout_user, login_required, fresh_login_required
@@ -14,6 +14,7 @@ from application.email import send_email
 from utilities.generate_invite_code import gen_invite_code
 from base64 import b64encode
 from sqlalchemy import desc
+
 
 
 @trv.route('/')
