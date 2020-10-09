@@ -55,5 +55,5 @@ def before_request():
 from application import views, models
 
 if __name__ == '__main__':
-    trv.run()
+    trv.run(debug=True)
 
