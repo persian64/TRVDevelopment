@@ -10,7 +10,7 @@ from flask_wtf.csrf import CSRFProtect
 
 
 trv = flask.Flask(__name__)
-
+trv.debug = True
 trv.config["SECRET_KEY"] = '(Th"E{p)wwv-=!QE/{$d>S`|x!L)+Qj_QhK(#~atA^{u>ixI;>_eXkC(1@?D!D4Xw'
 trv.config["SECURITY_PASSWORD_SALT"] = ')+Qj_QhK(#~atA^{u>ixI;'
 trv.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data.db')
@@ -55,5 +55,5 @@ def before_request():
 from application import views, models
 
 if __name__ == '__main__':
-    trv.run(debug=True)
+    trv.run()
 
