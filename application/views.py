@@ -362,7 +362,7 @@ def user_settings():
 
                 token = generate_confirmation_token(curr_email.email)
                 confirm_url = flask.url_for('confirm_email', token=token, _external=True)
-                html = flask.render_template('./main/../templates/mail_messages/account_activation.html', confirm_url=confirm_url)
+                html = flask.render_template('./mail_messages/account_activation.html', confirm_url=confirm_url)
                 subject = 'Please confirm your email'
                 send_email(curr_email.email, subject, html)
                 flask.flash("Your email address has been changed, please confirm your account.")
