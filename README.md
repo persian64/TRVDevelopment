@@ -60,6 +60,7 @@ pip3 install -r requirements.txt
 ```
 - Run the application:
 ```
+source venv/bin/activate 
 flask run
 ```
 
