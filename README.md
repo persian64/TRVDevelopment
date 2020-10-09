@@ -63,12 +63,18 @@ pip3 install -r requirements.txt
 flask run
 ```
 
+- Login credentials:
+```
+Email: kisho64@protonmail.com
+Password: &yXxt>?sx<Zko}dk@6aX
+```
 
 ### Resources used so far:
 - Flask reddit community 
 - pythondiscord.com 
 - StackOverFlow
-
+- Sweet Google
+- Pretty Printed - YouTube channel 
 
 ## Thanks 
 To everyone who was there for me, motivated me and debugged along the way.
