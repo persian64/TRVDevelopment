@@ -56,7 +56,7 @@ If you faced any problems, feel free to contact me.
 
 
 Here is app.py file with comments:
-```
+```py
 # Import the necessary files
 import flask  
 import os  
