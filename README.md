@@ -54,9 +54,14 @@ These vulnerabilities should be present because I haven't add anything to preven
 ### How to use this project?
 I have made everything very simple to use, the views.py file has everything commented out, if you are a beginner in flask, you can easily understand what's going on.
 
+- Create and activate a virtual environment inside project directory:
+```
+$ python3 -m venv venv 
+$ source venv/bin/activate 
+```
+
 - Install dependencies by running:
 ```
-$ source venv/bin/activate 
 $ pip3 install -r requirements.txt
 ```
 - Run the application:
