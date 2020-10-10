@@ -56,12 +56,12 @@ I have made everything very simple to use, the views.py file has everything comm
 
 - Install dependencies by running:
 ```
-pip3 install -r requirements.txt
+$ source venv/bin/activate 
+$ pip3 install -r requirements.txt
 ```
 - Run the application:
 ```
-source venv/bin/activate 
-flask run
+$ flask run
 ```
 
 - Login credentials:
