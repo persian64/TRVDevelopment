@@ -42,7 +42,7 @@ I would love to hear from you, please let me know about tips, tricks and methodo
 This application has not been tested and I am not planning to test it but from what I can read in source code, these vulnerabilities are to be found:
 - Stored XSS in blog 
 - Remote command execution in thumbnail file upload for blog 
-- Service side template injection
+- Server side template injection
 - Insecure direct object reference 
 
 These vulnerabilities should be present because I haven't add anything to prevent them yet, you should take the code to practice:
